@@ -37,5 +37,4 @@ if AIRCRAFT_FILENAME == "CL650.acf" then
 		CL650_gear_nws = 0
 	end
 	create_command("FlyWithLua/CL650/gear_nws_off", "Move nose wheel steering switch to OFF.", "CL650_gear_nws_off()", "", "")
-
 end
