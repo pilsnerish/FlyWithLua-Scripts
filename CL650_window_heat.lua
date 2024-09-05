@@ -6,13 +6,22 @@
 if AIRCRAFT_FILENAME == "CL650.acf" then
 	dataref("CL650_ice_wind_L", "CL650/overhead/ice/wind/L_value", "readonly")
 	dataref("CL650_ice_wind_R", "CL650/overhead/ice/wind/R_value", "readonly")
-	dataref("CL650_sim_window_heat_on", "sim/cockpit2/ice/ice_window_heat_on", "writable")
+	CL650_ice_window_heat_on = dataref_table("sim/cockpit2/ice/ice_window_heat_on_window")
 
 	function CL650_window_heat()
-		if (CL650_ice_wind_L > 0 or CL650_ice_wind_R > 0) then
-			CL650_sim_window_heat_on = 1
+		if (CL650_ice_wind_L > 0) then
+			CL650_ice_window_heat_on[0] = 1
+			CL650_ice_window_heat_on[2] = 1
 		else
-			CL650_sim_window_heat_on = 0
+			CL650_ice_window_heat_on[0] = 0
+			CL650_ice_window_heat_on[2] = 0
+		end
+		if (CL650_ice_wind_R > 0) then
+			CL650_ice_window_heat_on[1] = 1
+			CL650_ice_window_heat_on[3] = 1
+		else
+			CL650_ice_window_heat_on[1] = 0
+			CL650_ice_window_heat_on[3] = 0
 		end
 	end
 
