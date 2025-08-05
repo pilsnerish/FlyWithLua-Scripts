@@ -4,6 +4,7 @@
 -- (at your option) any later version.
 
 if AIRCRAFT_FILENAME == "CL650.acf" then
+	-- FCP --
 	create_command("FlyWithLua/CL650/fcp_crs1_push_press", "", "command_begin('CL650/FCP/crs1_push')", "", "")
 	create_command("FlyWithLua/CL650/fcp_crs1_push_release", "", "command_end('CL650/FCP/crs1_push')", "", "")
 
@@ -63,4 +64,11 @@ if AIRCRAFT_FILENAME == "CL650.acf" then
 
 	create_command("FlyWithLua/CL650/fcp_fd2_press", "", "command_begin('CL650/FCP/fd2')", "", "")
 	create_command("FlyWithLua/CL650/fcp_fd2_release", "", "command_end('CL650/FCP/fd2')", "", "")
+
+	-- GLARESHIELD --
+	create_command("FlyWithLua/CL650/glareshield_master_warn_L_press", "", "command_begin('CL650/glareshield/master_warn_L')", "", "")
+	create_command("FlyWithLua/CL650/glareshield_master_warn_L_release", "", "command_end('CL650/glareshield/master_warn_L')", "", "")
+
+	create_command("FlyWithLua/CL650/glareshield_master_warn_R_press", "", "command_begin('CL650/glareshield/master_warn_R')", "", "")
+	create_command("FlyWithLua/CL650/glareshield_master_warn_R_release", "", "command_end('CL650/glareshield/master_warn_R')", "", "")
 end
